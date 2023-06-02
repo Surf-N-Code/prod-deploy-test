@@ -1,0 +1,27 @@
+name: CI
+
+on:
+    push:
+        branches: ["main"]
+    pull_request:
+        types: [opened, synchronize]
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+    ci:
+        name: CI
+        timeout-minutes: 15
+        runs-on: ubuntu-latest
+        env:
+            TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+            TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+        permissions:
+            contents: read
+            pull-requests: write
+        steps:
+            - name: Changesets
+              if: github.ref == 'refs/heads/main'
+              uses: changesets/action@v1
+              env:
+                  GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
