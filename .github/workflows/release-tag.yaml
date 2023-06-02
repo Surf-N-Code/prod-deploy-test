@@ -1,0 +1,13 @@
+---
+name: 'Deploy Prod and Demo Env'
+
+on:
+    push:
+        tags:
+            - 'v[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+    start-release-tag:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Starting release tag"

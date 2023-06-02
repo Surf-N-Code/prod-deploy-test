@@ -1,0 +1,59 @@
+{
+    "categories": [
+      {
+        "title": "## 🧪 Tests",
+        "exhaustive": true,
+        "empty_content": "- no matching PRs",
+        "rules": [
+          {
+            "pattern": "test",
+            "on_property": "title"
+          },
+          {
+            "pattern": "tests",
+            "on_property": "title"
+          }
+        ]
+      },
+      {
+        "title": "## 🐛 Fixes",
+        "exhaustive": true,
+        "empty_content": "- no matching PRs",
+        "rules": [
+          {
+            "pattern": "fix",
+            "on_property": "title"
+          }
+        ]
+      },
+      {
+        "title": "## 🚀 Feature",
+        "exhaustive": true,
+        "empty_content": "- no matching PRs",
+        "rules": [
+          {
+            "pattern": "feat",
+            "on_property": "title"
+          },
+          {
+            "pattern": "feature",
+            "on_property": "title"
+          }
+        ]
+      }
+    ],
+    "sort": {
+      "order": "ASC",
+      "on_property": "mergedAt"
+    },
+    "template": "${{CHANGELOG}}\n\n<details>\n<summary>Uncategorized</summary>\n\n${{UNCATEGORIZED}}\n</details>",
+    "pr_template": "- ${{TITLE}}\n   - PR: #${{NUMBER}} by ${{AUTHOR}}",
+    "empty_template": "- no changes",
+    "tag_resolver": {
+      "method": "semver",
+      "transformer": {
+        "pattern": "release-(.+)",
+        "target": "$1"
+      }
+    }
+}

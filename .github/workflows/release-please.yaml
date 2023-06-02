@@ -1,0 +1,30 @@
+on:
+    push:
+        branches:
+            - main
+name: release-please
+jobs:
+    release-please:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: google-github-actions/release-please-action@v3
+              id: release
+              with:
+                  command: manifest
+            - name: Checkout
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+                  token: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
+              if: ${{ steps.release.outputs.release_created }}
+            - uses: pnpm/action-setup@v2
+            - name: Setup Node
+              uses: actions/setup-node@v3
+              with:
+                  cache: pnpm
+                  node-version-file: .nvmrc
+              if: ${{ steps.release.outputs.release_created }}
+            - name: Install dependencies
+              run: |
+                  npm config set -- '//npm.pkg.github.com/:_authToken' ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
+                  pnpm install --frozen-lockfile

@@ -1,0 +1,23 @@
+{
+  "name": "prod-deploy-action-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schuettflix/prod-deploy-action-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/schuettflix/prod-deploy-action-test/issues"
+  },
+  "homepage": "https://github.com/schuettflix/prod-deploy-action-test#readme",
+  "dependencies": {
+    "@changesets/cli": "^2.26.1",
+    "conventional-recommended-bump": "^6.1.0"
+  }
+}
