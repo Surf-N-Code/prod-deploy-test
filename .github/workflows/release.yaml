@@ -22,16 +22,12 @@ jobs:
               with:
                   fetch-depth: 2
                   token: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
-            - name: Setup pnpm
-              uses: pnpm/action-setup@v2
-              version: latest
             - name: Setup Node.js environment
               uses: actions/setup-node@v3
               with:
-                  node-version-file: .nvmrc
-                  cache: pnpm
+                  version: latest
             - name: Install dependencies
-              run: pnpm install
+              run: npm install
             - name: Changesets
               if: github.ref == 'refs/heads/main'
               uses: changesets/action@v1
