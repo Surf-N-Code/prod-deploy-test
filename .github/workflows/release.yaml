@@ -3,8 +3,6 @@ name: CI
 on:
     push:
         branches: ["main"]
-    pull_request:
-        types: [opened, synchronize]
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -31,15 +29,11 @@ jobs:
             - name: Release snapshot
               run: |
                 npx changeset version
-                npx changeset publish --tag canary
+                npx changeset publish --tag
               env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
             - name: Changesets
               if: github.ref == 'refs/heads/main'
               uses: changesets/action@v1
               env:
                   GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
-              with:
-                  publish: npx changeset version
-                  commit: "chore: release"
-                  title: "Release"
