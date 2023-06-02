@@ -1,5 +1,15 @@
 # prod-deploy-action-test
 
+## 1.1.0
+
+### Minor Changes
+
+- 500ebb9: minor
+
+### Patch Changes
+
+- test
+
 ## 1.0.2
 
 ### Patch Changes

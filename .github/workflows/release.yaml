@@ -28,12 +28,18 @@ jobs:
                   version: latest
             - name: Install dependencies
               run: npm install
+            - name: Release snapshot
+              run: |
+                npx changeset version
+                npx changeset publish --tag canary
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             - name: Changesets
               if: github.ref == 'refs/heads/main'
               uses: changesets/action@v1
               env:
                   GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
               with:
-                  publish: pnpm changeset publish
+                  publish: npx changeset version
                   commit: "chore: release"
                   title: "Release"

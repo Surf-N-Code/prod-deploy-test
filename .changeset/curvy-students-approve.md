@@ -2,4 +2,4 @@
 "prod-deploy-action-test": minor
 ---
 
-minor
+tag2
