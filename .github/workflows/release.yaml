@@ -35,6 +35,9 @@ jobs:
             - name: Install dependencies
               run: npm install
             - name: Release
-              run: |
-                npx changeset tag
-                git push --tags
+              run: npx changeset tag
+            - name: Push Tag
+              uses: ad-m/github-push-action@v0.6.0
+              with:
+                github_token: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
+                tags: true
