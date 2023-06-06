@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 7.0.1
+
+### Patch Changes
+
+- 717dfa6: patch 1
+
 ## 7.0.0
 
 ### Major Changes
