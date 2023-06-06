@@ -7,14 +7,14 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-    create-release-pr:
+  release:
         name: Release
         timeout-minutes: 15
         runs-on: ubuntu-latest
         permissions:
             contents: read
             pull-requests: write
-        if: github.event.pull_request.title == 'changeset-release/main' && github.event.pull_request.base.ref == 'main'
+        if: github.event.pull_request.title == 'Release' && github.event.pull_request.base.ref == 'main'
         steps:
             - name: Check out code
               uses: actions/checkout@v3
