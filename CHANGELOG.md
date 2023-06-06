@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 6.0.0
+
+### Major Changes
+
+- 5ac193a: major 9
+
 ## 5.0.0
 
 ### Major Changes
