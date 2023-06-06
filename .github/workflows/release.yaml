@@ -17,6 +17,7 @@ jobs:
         permissions:
             contents: read
             pull-requests: write
+        if: contains(github.event.pull_request.base.ref, 'changeset-release')
         steps:
             - name: echo pull request info
               run: |
