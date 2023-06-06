@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 7.0.0
+
+### Major Changes
+
+- cdbc3a8: 10
+
 ## 6.0.0
 
 ### Major Changes
