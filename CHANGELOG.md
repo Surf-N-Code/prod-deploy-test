@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 10.0.0
+
+### Major Changes
+
+- 1a313ae: 10
+
 ## 9.0.0
 
 ### Major Changes
