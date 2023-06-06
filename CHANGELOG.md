@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 1.2.0
+
+### Minor Changes
+
+- 6bd240f: test3
+
 ## 1.1.1
 
 ### Patch Changes
