@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 8.0.0
+
+### Major Changes
+
+- 73a1ee9: major 8
+
 ## 7.0.3
 
 ### Patch Changes
