@@ -17,12 +17,12 @@ jobs:
         permissions:
             contents: read
             pull-requests: write
-        if: contains(github.event.pull_request.head.ref, 'changeset-release')
+        #if: contains(github.event.pull_request.head.ref, 'changeset-release')
         steps:
             - name: echo pull request info
               run: |
                 echo ${{ github.event.pull_request.title }}
-                echo ${{ github.event.pull_request.base.ref }}
+                echo ${{ github.event.pull_request.head.ref }}
             - name: Check out code
               uses: actions/checkout@v3
               with:
