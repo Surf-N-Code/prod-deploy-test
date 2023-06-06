@@ -1,5 +1,15 @@
 # prod-deploy-action-test
 
+## 11.0.0
+
+### Major Changes
+
+- 6d8844b: 11
+
+### Patch Changes
+
+- 6d8844b: patch
+
 ## 10.0.0
 
 ### Major Changes
