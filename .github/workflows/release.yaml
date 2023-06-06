@@ -1,8 +1,12 @@
 name: create-release-pr
 
 on:
-    push:
-        branches: ["main"]
+  push:
+    branches: [ "main" ]
+    pull_request:
+      types:
+        - closed
+
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -14,6 +18,7 @@ jobs:
         permissions:
             contents: read
             pull-requests: write
+        if: github.event.pull_request.title == 'Release' && github.event.pull_request.base.ref == 'main'
         steps:
             - name: Check out code
               uses: actions/checkout@v3
@@ -27,4 +32,4 @@ jobs:
             - name: Install dependencies
               run: npm install
             - name: Release
-              run: npm run release
+              run: npx changeset tag

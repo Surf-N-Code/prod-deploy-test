@@ -2,7 +2,7 @@ name: create-release-pr
 
 on:
     push:
-        branches: ["wurst"]
+        branches: ["main"]
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
