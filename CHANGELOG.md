@@ -1,5 +1,13 @@
 # prod-deploy-action-test
 
+## 3.0.0
+
+### Major Changes
+
+- 61ace79: major 3
+- 15d84f9: major 4
+- 190bf0d: major 5
+
 ## 2.0.0
 
 ### Major Changes
