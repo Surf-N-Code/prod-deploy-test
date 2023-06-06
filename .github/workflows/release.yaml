@@ -4,7 +4,8 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-      types: [closed]
+      types:
+        - closed
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -16,8 +17,12 @@ jobs:
         permissions:
             contents: read
             pull-requests: write
-        if: github.event.pull_request.title == 'Release' && github.event.pull_request.base.ref == 'main'
+        #if: github.event.pull_request.title == 'Release' && github.event.pull_request.base.ref == 'main'
         steps:
+            - name: echo pull request info
+              run: |
+                echo ${{ github.event.pull_request.title }}
+                echo ${{ github.event.pull_request.base.ref }}
             - name: Check out code
               uses: actions/checkout@v3
               with:
