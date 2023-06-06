@@ -8,7 +8,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
     create-release-pr:
-        name: Release
+        name: create-release-pr
         timeout-minutes: 15
         runs-on: ubuntu-latest
         permissions:
