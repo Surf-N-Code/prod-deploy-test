@@ -1,5 +1,13 @@
 # prod-deploy-action-test
 
+## 1.1.1
+
+### Patch Changes
+
+- 4854d67: add translation script
+- 9e9c144: tag
+- e4e1b48: test1
+
 ## 1.1.0
 
 ### Minor Changes

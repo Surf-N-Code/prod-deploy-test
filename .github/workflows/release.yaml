@@ -36,6 +36,8 @@ jobs:
               if: github.ref == 'refs/heads/main'
               uses: changesets/action@v1
               with:
-                translation: npm run translation
+                version: npm run translation
+                title: "Release"
+                commit: "chore: release"
               env:
                   GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
