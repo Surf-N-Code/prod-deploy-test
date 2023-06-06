@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 7.0.2
+
+### Patch Changes
+
+- e785f63: patch 2
+
 ## 7.0.1
 
 ### Patch Changes
