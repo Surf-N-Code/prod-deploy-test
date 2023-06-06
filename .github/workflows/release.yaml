@@ -2,7 +2,7 @@ name: create-release-pr
 
 on:
     push:
-        branches: ["wurst"]
+        branches: ["main"]
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -26,11 +26,5 @@ jobs:
                   version: latest
             - name: Install dependencies
               run: npm install
-            - name: Create Release Pull Request
-              uses: changesets/action@v1
-              with:
-                version: npm run release
-                title: "Release"
-                commit: "chore: release"
-              env:
-                  GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
+            - name: Release
+              run: npm run release
