@@ -1,5 +1,12 @@
 # prod-deploy-action-test
 
+## 4.0.0
+
+### Major Changes
+
+- a796215: major 7
+- 50faef1: major 6
+
 ## 3.0.0
 
 ### Major Changes
