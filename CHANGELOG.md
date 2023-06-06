@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 9.0.0
+
+### Major Changes
+
+- 1faa060: 9
+
 ## 8.0.0
 
 ### Major Changes
