@@ -8,7 +8,7 @@ concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
     ci:
-        name: CI
+        name: Release
         timeout-minutes: 15
         runs-on: ubuntu-latest
         permissions:
@@ -26,14 +26,16 @@ jobs:
                   version: latest
             - name: Install dependencies
               run: npm install
-            - name: Release snapshot
-              run: |
-                npx changeset version
-                npx changeset tag
-              env:
-                GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
-            - name: Changesets
+#            - name: Release snapshot
+#              run: |
+#                npx changeset version
+#                npx changeset tag
+#              env:
+#                GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
+            - name: Create Release Pull Request
               if: github.ref == 'refs/heads/main'
               uses: changesets/action@v1
+              with:
+                translation: npm run translation
               env:
                   GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
