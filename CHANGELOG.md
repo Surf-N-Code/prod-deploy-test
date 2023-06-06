@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 4.0.0
+
+### Major Changes
+
+- 50faef1: major 6
+
 ## 3.0.0
 
 ### Major Changes
