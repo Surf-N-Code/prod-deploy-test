@@ -10,7 +10,7 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-    ci:
+    release:
         name: Release
         timeout-minutes: 15
         runs-on: ubuntu-latest

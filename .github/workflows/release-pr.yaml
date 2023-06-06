@@ -1,19 +1,22 @@
 name: CI
 
 on:
-    push:
-        branches: ["main"]
+    pull_request:
+      types:
+        - opened
+
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
-    ci:
+    create-release-pr:
         name: Release
         timeout-minutes: 15
         runs-on: ubuntu-latest
         permissions:
             contents: read
             pull-requests: write
+        if: github.event.pull_request.base.ref == 'main'
         steps:
             - name: Check out code
               uses: actions/checkout@v3
