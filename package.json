@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "translation": "npx changeset version && echo run whatever script here"
+    "translation": "run whatever script here",
+    "release": "npx changeset version && npx changeset tag"
   },
   "repository": {
     "type": "git",
