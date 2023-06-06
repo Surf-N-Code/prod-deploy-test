@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 2.0.0
+
+### Major Changes
+
+- major
+
 ## 1.2.0
 
 ### Minor Changes

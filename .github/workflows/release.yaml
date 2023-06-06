@@ -3,6 +3,9 @@ name: CI
 on:
     push:
         branches: ["main"]
+    pull_request:
+      types:
+        - closed
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -14,6 +17,7 @@ jobs:
         permissions:
             contents: read
             pull-requests: write
+        if: github.event.pull_request.merged == true && github.event.pull_request.title == 'Release'
         steps:
             - name: Check out code
               uses: actions/checkout@v3
@@ -26,12 +30,12 @@ jobs:
                   version: latest
             - name: Install dependencies
               run: npm install
-#            - name: Release snapshot
-#              run: |
-#                npx changeset version
-#                npx changeset tag
-#              env:
-#                GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
+            - name: Update package json with new version
+              run: |
+                npx changeset version
+                npx changeset tag
+              env:
+                GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
             - name: Create Release Pull Request
               if: github.ref == 'refs/heads/main'
               uses: changesets/action@v1
