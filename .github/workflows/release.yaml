@@ -36,9 +36,9 @@ jobs:
               run: npm install
             - name: Create tag
               run: |
-                git tag
+                git ls-remote --tags origin
                 npx changeset tag
-                git tag
+                git ls-remote --tags origin
             - name: GIT commit and push all changed files
               env:
                 CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
