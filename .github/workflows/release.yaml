@@ -37,9 +37,11 @@ jobs:
             - name: Release
               run: |
                 latest_tag=$(git describe --tags --abbrev=0)
-                echo "Latest tag: $latest_tag"
+                echo $latest_tag
+                echo ${{latest_tag}}
                 npx changeset tag
-                echo "Updated latest tag: $(git describe --tags --abbrev=0)"
+                echo $(git describe --tags --abbrev=0)
+                ecoh ${{$(git describe --tags --abbrev=0)}}
             - name: GIT commit and push all changed files
               env:
                 CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
