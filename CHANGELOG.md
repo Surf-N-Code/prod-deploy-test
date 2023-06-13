@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 12.0.1
+
+### Patch Changes
+
+- a79b726: patch it
+
 ## 12.0.0
 
 ### Major Changes
