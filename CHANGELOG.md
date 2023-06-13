@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 12.0.0
+
+### Major Changes
+
+- e9e2925: test
+
 ## 11.2.5
 
 ### Patch Changes
