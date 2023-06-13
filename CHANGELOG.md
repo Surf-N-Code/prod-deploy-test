@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 11.0.6
+
+### Patch Changes
+
+- 6c27a86: test
+
 ## 11.0.5
 
 ### Patch Changes
