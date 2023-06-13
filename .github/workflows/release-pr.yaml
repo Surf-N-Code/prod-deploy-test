@@ -33,6 +33,6 @@ jobs:
               env:
                 GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
               with:
-                publish: npx changeset tag # <-- tag oder publish is quasi egal hier
+                publish: npx changeset tag
                 commit: "chore: release"
                 title: "Release"
