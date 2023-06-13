@@ -38,6 +38,7 @@ jobs:
               run: |
                 echo git describe --tags --abbrev=0
                 npx changeset tag
+                echo git describe --tags --abbrev=0
             - name: GIT commit and push all changed files
               env:
                 CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
