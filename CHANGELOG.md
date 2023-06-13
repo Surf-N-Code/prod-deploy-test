@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 11.2.5
+
+### Patch Changes
+
+- fdd17b2: test
+
 ## 11.2.4
 
 ### Patch Changes
