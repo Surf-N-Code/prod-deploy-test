@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 11.2.0
+
+### Minor Changes
+
+- cc745f2: tst
+
 ## 11.1.1
 
 ### Patch Changes
