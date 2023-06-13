@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 11.2.4
+
+### Patch Changes
+
+- 682c9d2: tst
+
 ## 11.2.3
 
 ### Patch Changes
