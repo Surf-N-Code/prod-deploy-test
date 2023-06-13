@@ -37,8 +37,10 @@ jobs:
             - name: Create tag
               run: |
                 git ls-remote --tags origin
+                git tag --list
                 npx changeset tag
                 git ls-remote --tags origin
+                git tag --list
             - name: GIT commit and push all changed files
               env:
                 CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
