@@ -34,11 +34,11 @@ jobs:
                   version: latest
             - name: Install dependencies
               run: npm install
-            - name: Release
+            - name: Create tag
               run: |
+                git tag
                 npx changeset tag
-                latest_tag=$(git describe --tags --abbrev=0)
-                echo "Latest tag: $latest_tag"
+                git tag
             - name: GIT commit and push all changed files
               env:
                 CI_COMMIT_MESSAGE: Continuous Integration Build Artifacts
