@@ -41,7 +41,7 @@ jobs:
                 node create-file.js
                 git config --global user.name "GitHub Action"
                 git config --global user.email "ndilthey@gmail.com"
-                git config --global push.autoSetupRemote origin
+                git config --global push.autoSetupRemote true
                 git add .
                 git commit -m "chore: update translations"
                 git push
