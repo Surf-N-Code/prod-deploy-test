@@ -37,6 +37,7 @@ jobs:
                 commit: "chore: release"
                 title: "Release"
             - name: Commit Translations
+              if: steps.changesets.outputs.published == 'false'
               run: |
                 node create-file.js
                 git config --global user.name "GitHub Action"
