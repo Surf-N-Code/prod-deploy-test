@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 12.0.2
+
+### Patch Changes
+
+- 808d1a6: test
+
 ## 12.0.1
 
 ### Patch Changes
