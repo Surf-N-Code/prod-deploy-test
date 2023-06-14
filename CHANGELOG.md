@@ -1,5 +1,11 @@
 # prod-deploy-action-test
 
+## 16.0.0
+
+### Major Changes
+
+- c06ac48: major 1
+
 ## 15.0.0
 
 ### Major Changes
