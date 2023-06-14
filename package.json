@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "translation": "run whatever script here",
-    "release": "npx changeset tag && npm run translation"
+    "release:changesets": "node create-file.js && npx changeset publish"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "homepage": "https://github.com/schuettflix/prod-deploy-action-test#readme",
   "dependencies": {
     "@changesets/cli": "^2.26.1",
-    "conventional-recommended-bump": "^6.1.0"
+    "conventional-recommended-bump": "^6.1.0",
+    "fs": "^0.0.1-security"
   }
 }
