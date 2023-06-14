@@ -27,15 +27,6 @@ jobs:
                   version: latest
             - name: Install dependencies
               run: npm install
-            - name: Commit Translations
-              run: |
-                node create-file.js
-                git config --global user.name "GitHub Action"
-                git config --global user.email "ndilthey@gmail.com"
-                git config --global push.autoSetupRemote true
-                git add .
-                git commit -m "chore: update translations"
-                git push
             - name: Changesets
               id: changesets
               uses: changesets/action@v1
@@ -45,4 +36,19 @@ jobs:
                 publish: npx changeset tag
                 commit: "chore: release"
                 title: "Release"
-
+            - name: Commit Translations
+              run: |
+                node create-file.js
+#                git config --global user.name "GitHub Action"
+#                git config --global user.email "ndilthey@gmail.com"
+#                git config --global push.autoSetupRemote true
+#                git add .
+#                git commit -m "chore: update translations"
+#                git push
+            - uses: EndBug/add-and-commit@v9 # You can change this to use a specific version.
+              with:
+                author_name: Release Bot
+                author_email: sflx@schuettflix.com
+                committer_name: Release Bot
+                committer_email: sflx@schuettflix.com
+                message: 'Pull translations'
