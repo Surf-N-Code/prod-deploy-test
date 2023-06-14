@@ -1,8 +1,7 @@
 name: create-release
 
 on:
-    pull_request:
-        types: [closed]
+    push:
         branches: ["main"]
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
