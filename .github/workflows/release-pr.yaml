@@ -27,15 +27,6 @@ jobs:
                   version: latest
             - name: Install dependencies
               run: npm install
-            - name: Changesets
-              id: changesets
-              uses: changesets/action@v1
-              env:
-                GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
-              with:
-                publish: npx changeset tag
-                commit: "chore: release"
-                title: "Release"
             - name: Commit Translations
               run: |
                 node create-file.js
@@ -45,3 +36,13 @@ jobs:
                 git add .
                 git commit -m "chore: update translations"
                 git push
+            - name: Changesets
+              id: changesets
+              uses: changesets/action@v1
+              env:
+                GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
+              with:
+                publish: npx changeset tag
+                commit: "chore: release"
+                title: "Release"
+
