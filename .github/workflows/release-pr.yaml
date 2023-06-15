@@ -16,37 +16,37 @@ jobs:
             pull-requests: write
         if: github.event.pull_request.title != 'Release'
         steps:
-          - name: Check out code
-            uses: actions/checkout@v3
-            with:
-                fetch-depth: 2
-                token: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
-          - name: Setup Node.js environment
-            uses: actions/setup-node@v3
-            with:
-                version: latest
-          - name: Install dependencies
-            run: npm install
-          - name: Commit Translations
-            run: |
-              node create-file.js
-              git config --global user.name "GitHub Action"
-              git config --global user.email "ndilthey@gmail.com"
-              git config --global push.autoSetupRemote true
-              git add .
-              if [[ -n $(git status -s) ]]; then
-                git commit -m "chore: update translations [skip ci]"
-                git push
-              else
-                echo "No changes to commit."
-              fi
-          - name: Changesets
-            id: changesets
-            uses: changesets/action@v1
-            env:
-              GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
-            with:
-              publish: npx changeset tag
-              commit: "chore: release"
-              title: "Release"
+            - name: Check out code
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 2
+                  token: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
+            - name: Setup Node.js environment
+              uses: actions/setup-node@v3
+              with:
+                  version: latest
+            - name: Install dependencies
+              run: npm install
+            - name: Commit Translations
+              run: |
+                node create-file.js
+                git config --global user.name "GitHub Action"
+                git config --global user.email "ndilthey@gmail.com"
+                git config --global push.autoSetupRemote true
+                git add .
+                if [[ -n $(git status -s) ]]; then
+                  git commit -m "chore: update translations [skip ci]"
+                  git push
+                else
+                  echo "No changes to commit."
+                fi
+            - name: Changesets
+              id: changesets
+              uses: changesets/action@v1
+              env:
+                GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
+              with:
+                publish: npx changeset tag
+                commit: "chore: release"
+                title: "Release"
 
