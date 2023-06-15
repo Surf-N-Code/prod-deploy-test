@@ -35,7 +35,7 @@ jobs:
           git config --global push.autoSetupRemote true
           git add .
           if [[ -n $(git status -s) ]]; then
-            git commit -m "chore: update translations"
+            git commit -m "chore: update translations [skip ci]"
             git push
           else
             echo "No changes to commit."
